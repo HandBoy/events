@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
-from apps.events.url import urlpatterns as sales
+from apps.events.url import urlpatterns as event
+from django.urls import include, path
 
 urlpatterns = [
-    path("api/", include(sales)),
+    path("api/", include(event)),
 ]
