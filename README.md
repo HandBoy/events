@@ -144,6 +144,6 @@ I created two entities:
 ## TODO LIST
 - [ ] Appllications can send events for the same session.
 - [ ] Different types of Events (identified by category + name) can have different validations for their payloads.
-- [ ] Improve the view to use async save to release the request.
+- [ ] Improve the view to use async function to save a event this way releasing the request.
 - [ ] Add Swagger.
 - [ ] Add docker for django application.
