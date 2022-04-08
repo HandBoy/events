@@ -18,6 +18,7 @@ class EventsView(
 
     def perform_create(self, serializer):
         # TODO overwrite create and add async process to save the event
+        # TODO Try get the application with a middleware
         try:
             application = Application.objects.get(
                 uuid=self.request.headers.get("Application")
