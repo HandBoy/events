@@ -40,9 +40,7 @@ Quit the server with CONTROL-C.
 ### API
 The endpoints created.
 
-**POST /api/v1/events/**
-
-The endpoint thar save a new event.
+**POST /api/v1/events/**: Save a new event.
 
 
 **Header**
@@ -59,7 +57,7 @@ The endpoint thar save a new event.
 | data       | dict      | Yes      |
 | timestamp  | timestamp | Yes      |
 
-
+Examples:
 ```
 # Request
 curl --location --request POST 'http://127.0.0.1:8000/api/v1/events/' \
