@@ -8,12 +8,12 @@ class EventssApiException(APIException):
     default_code = _("sales_api_error")
 
 
-class ApplicationNotFoundError(EventssApiException):
+class UntrustedApplicationApiError(EventssApiException):
     """
-    Custom API exception for Application not found.
+    Custom API exception for Untrusted Application.
     """
-    default_detail = _("Application not found.")
-    default_code = _("filter_required")
+    default_detail = _("Untrusted Application.")
+    default_code = _("untrusted application")
 
     def __init__(self, message=None):
         if message:

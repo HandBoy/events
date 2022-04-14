@@ -1,7 +1,7 @@
 from rest_framework import mixins, viewsets
 
 from ..models import Application, Event
-from .exceptions import ApplicationNotFoundError
+from .exceptions import UntrustedApplicationApiError
 from .serializers import EventsSerializer
 
 
@@ -24,7 +24,7 @@ class EventsView(
                 uuid=self.request.headers.get("Application")
             )
         except Application.DoesNotExist as err:
-            raise ApplicationNotFoundError()
+            raise UntrustedApplicationApiError()
 
         serializer.validated_data['application'] = application
         super().perform_create(serializer)
