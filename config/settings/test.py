@@ -11,4 +11,5 @@ MIGRATION_MODULES = {
     "admin": None,
     "contenttypes": None,
     "sessions": None,
+    "events": None,
 }

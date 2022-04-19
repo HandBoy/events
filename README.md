@@ -63,7 +63,7 @@ Examples:
 curl --location --request POST 'http://127.0.0.1:8000/api/v1/events/' \
 --header 'application: 0e302fce-66ad-4721-911e-0ab9d33697bf' \
 --header 'Content-Type: application/json' \
---data-raw '{
+--data-raw '[{
     "session_id": "e2085be5-9137-4e4e-80b5-f1ffddc25423",
     "category": "page interaction",
     "name": "pageview",
@@ -72,21 +72,12 @@ curl --location --request POST 'http://127.0.0.1:8000/api/v1/events/' \
         "path": "/"
     },
     "timestamp": "2021-01-01 09:15:27.243860"
-}'
+}]'
 
 
 # Response
 # 201
-{
-    "session_id": "e2085be5-9137-4e4e-80b5-f1ffddc25423",
-    "category": "page interaction",
-    "name": "pageview",
-    "data": {
-        "host": "www.consumeraffairs.com",
-        "path": "/"
-    },
-    "timestamp": "2021-01-01T09:15:27.243860Z"
-}
+[]
 ```
 
 Errors
