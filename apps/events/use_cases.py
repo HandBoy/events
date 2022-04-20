@@ -3,6 +3,7 @@ from typing import List
 from apps.events.exceptions import (
     AplicationNotFoundUseCase,
     CategoryNotFoundUseCase,
+    CategoryWithoutStandardUseCase,
 )
 
 from .models import Application, Category, Event
@@ -36,11 +37,12 @@ class EventUseCase:
             raise AplicationNotFoundUseCase()
     
     def get_category(self, event_category: str):        
-        category = event_category.split()[0]
-        name = event_category.split()[1]
-
         try:
+            category = event_category.split()[0]
+            name = event_category.split()[1]
             return Category.objects.get(name=name, category=category)
         except Category.DoesNotExist as err:
             raise CategoryNotFoundUseCase()
+        except IndexError as err:
+            raise CategoryWithoutStandardUseCase()
             

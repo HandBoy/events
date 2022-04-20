@@ -9,3 +9,7 @@ class AplicationNotFoundUseCase(UseCaseException):
 
 class CategoryNotFoundUseCase(UseCaseException):
     pass
+
+
+class CategoryWithoutStandardUseCase(UseCaseException):
+    pass
