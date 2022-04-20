@@ -15,12 +15,6 @@ class UntrustedApplicationApiError(EventsApiException):
     default_detail = _("Untrusted Application.")
     default_code = _("untrusted application")
 
-    def __init__(self, message=None):
-        if message:
-            self.default_detail = message
-
-        super().__init__()
-
 
 class CategoryNotFoundApiError(EventsApiException):
     """
@@ -29,12 +23,6 @@ class CategoryNotFoundApiError(EventsApiException):
     default_detail = _("Category not found.")
     default_code = _("category_not_found")
 
-    def __init__(self, message=None):
-        if message:
-            self.default_detail = message
-
-        super().__init__()
-
 
 class CategoryWithoutStandardApiError(EventsApiException):
     """
@@ -42,9 +30,3 @@ class CategoryWithoutStandardApiError(EventsApiException):
     """
     default_detail = _("Category without standard. Please use: 'category name'")
     default_code = _("category_without_standard")
-
-    def __init__(self, message=None):
-        if message:
-            self.default_detail = message
-
-        super().__init__()
