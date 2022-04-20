@@ -1,0 +1,18 @@
+[
+{
+    "model": "events.category",
+    "pk": 1,
+    "fields": {
+        "name": "interaction",
+        "category": "page"
+    }
+},
+{
+    "model": "events.category",
+    "pk": 2,
+    "fields": {
+        "name": "interaction",
+        "category": "form"
+    }
+}
+]

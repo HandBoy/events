@@ -9,6 +9,8 @@ def generata_application():
 
 
 class PostEventsAPITestCase(APITestCase):
+    fixtures = ["event_category.json"]
+
     def setUp(self):
         self.url = "/api/v1/events/"
         self.headers = {
@@ -129,3 +131,35 @@ class PostEventsAPITestCase(APITestCase):
         response = self.client.post(self.url, data=data, format="json", **self.headers)
         # Then
         self.assertEqual(response.status_code, 201)
+
+    def test_error_post_events_with_category_not_found(self):
+        # Give
+        data = [
+            {
+                "session_id": "e2085be5-9137-4e4e-80b5-f1ffddc25423",
+                "category": "other interaction",
+                "name": "pageview",
+                "data": {"host": "www.consumeraffairs.com", "path": "/"},
+                "timestamp": "2021-01-01 09:15:27.243860",
+            },
+        ]
+        # When
+        response = self.client.post(self.url, data=data, format="json", **self.headers)
+        # Then        
+        self.assertEqual(response.status_code, 201)
+
+    def test_error_post_events_with_category_without_standard(self):
+        # Give
+        data = [
+            {
+                "session_id": "e2085be5-9137-4e4e-80b5-f1ffddc25423",
+                "category": "interaction",
+                "name": "pageview",
+                "data": {"host": "www.consumeraffairs.com", "path": "/"},
+                "timestamp": "2021-01-01 09:15:27.243860",
+            },
+        ]
+        # When
+        response = self.client.post(self.url, data=data, format="json", **self.headers)
+        # Then        
+        self.assertEqual(response.status_code, 400)
