@@ -1,0 +1,23 @@
+[run]
+branch = True
+omit =
+    */admin.py
+    */migrations/*
+    */models.py
+    */tests/*
+    */wsgi.py
+    */urls.py
+    */__init__.py
+    .venv/*
+    manage.py
+    config/asgi.py
+
+source = .
+
+[report]
+fail_under = 70
+ignore_errors = False
+show_missing = True
+
+[html]
+directory = coverage

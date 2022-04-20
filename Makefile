@@ -21,6 +21,9 @@ show_urls:	## Run migrate django command.
 test: 		## Run command test
 	python manage.py test -v 2 --settings=config.settings.test
 
+cov: clean	# Run coverage command test
+	coverage run manage.py test -v2 --settings=config.settings.test && coverage report
+
 psql_start:	## Run command to start postgres container
 	docker-compose -f docker/docker-compose.yml up -d events_db
 
