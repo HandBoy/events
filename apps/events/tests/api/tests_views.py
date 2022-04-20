@@ -146,7 +146,7 @@ class PostEventsAPITestCase(APITestCase):
         # When
         response = self.client.post(self.url, data=data, format="json", **self.headers)
         # Then        
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, 400)
 
     def test_error_post_events_with_category_without_standard(self):
         # Give
