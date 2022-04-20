@@ -1,5 +1,17 @@
 # the-eye
 
+## Overview
+Full code on [github](https://github.com/HandBoy/events).
+
+Application:
+- Web Service: [Django](https://www.djangoproject.com/).
+- API: Django [Rest Framework](https://www.django-rest-framework.org/).
+- Database: [Postgresql](https://www.postgresql.org/).
+- Tests: [Unit testing framework](https://docs.djangoproject.com/en/4.0/topics/testing/overview/).
+- Coverage: [Coverage.py](https://coverage.readthedocs.io/en/6.3.2/).
+- Documentation:
+    - API: [Swagger](https://drf-yasg.readthedocs.io/en/stable/readme.html) # TODO
+
 ## REST Application: Start Project
 
 ```shell
@@ -133,8 +145,10 @@ I created two entities:
 
 
 ## TODO LIST
-- [ ] Appllications can send events for the same session.
-- [ ] Different types of Events (identified by category + name) can have different validations for their payloads.
+- [x] Appllications can send events for the same session.
+- [x] Different types of Events (identified by category + name) can have different validations for their payloads.
 - [ ] Improve the view to use async function to save a event this way releasing the request.
 - [ ] Add Swagger.
 - [ ] Add docker for django application.
+- [x] Add coverage.
+
